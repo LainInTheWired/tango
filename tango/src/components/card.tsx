@@ -19,8 +19,12 @@ import './SwipeableList.css'
 import Link from "next/link";
 import Image from "next/image";
 
+interface Props {
+  name: string;
+  fid: Number;
+}
 
-function SwipeableListItem({ name,fid }) {
+function SwipeableListItem({ name,fid }: Props) {
   const listElementRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef(null);

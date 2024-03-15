@@ -3,8 +3,14 @@ import './SwipeableList.css'
 import Link from "next/link";
 import Image from "next/image";
 
+interface Props {
+  wordEN: string
+  wordJP: string
+  wid: Number
+  isShow: boolean
+}
 
-function SwipeableListItem({ wordEN,wordJP,wid,isShow }) {
+function SwipeableListItem({ wordEN,wordJP,wid,isShow }:Props) {
   const listElementRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef(null);

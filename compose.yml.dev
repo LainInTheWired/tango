@@ -15,7 +15,7 @@ services:
       - ./tango:/app
     environment:
       - WATCHPACK_POLLING=true
-    command: sh -c "[ -f ~/.exec-once ] || { yarn install && touch ~/.exec-once; } && yarn build && yarn start"
+    command: sh -c "[ -f ~/.exec-once ] || { yarn install && touch ~/.exec-once; } && yarn dev"
     ports:
       - "3333:3000"
   mysql:
@@ -39,7 +39,7 @@ services:
     environment:
       - FLASK_DEBUG=1
     tty: true
-    command: python app.py
+    command: /bin/bash
 
 volumes:
   db_data:
