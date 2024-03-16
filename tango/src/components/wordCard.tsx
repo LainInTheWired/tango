@@ -137,8 +137,8 @@ function SwipeableListItem({ wordEN,wordJP,wid,isShow }:Props) {
     console.log("start speach")
     const voices = window.speechSynthesis.getVoices();
 
-    msg.lang = 'en-GB';
-    msg.voice = voices[1]; // 7:Google 日本人 ja-JP ※他は英語のみ（次項参照）
+    msg.lang = 'en-US';
+    msg.voice = voices[0]; // 7:Google 日本人 ja-JP ※他は英語のみ（次項参照）
     speechSynthesis.speak(msg)
 
   }

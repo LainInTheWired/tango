@@ -28,7 +28,7 @@ export default function Home() {
 
     
     const connectWebSocket = () => {
-        const url: string = "ws://localhost:5001";
+        const url: string = "wss://www.laininthewired.site:3335";
         ws.current = new WebSocket(url)
 
         ws.current.onopen = () => {
@@ -136,11 +136,11 @@ export default function Home() {
             <form action="" onSubmit={onSubmit}>
                 <div className="w-11/12 mx-auto mt-10">
                     <label htmlFor="message" className="block  text-sm font-medium text-gray-900 dark:text-white">英語</label>
-                    <textarea name="wordEN" id="message" value={message} onChange={handleMessageChange} className="block p-2.5 w-full text-sm text-gray-900  rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="apple"></textarea>
+                    <textarea name="wordEN" id="message" value={message} onChange={handleMessageChange} className="block p-2.5 w-full text-base text-gray-900  rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="apple"></textarea>
                 </div>
                 <div className="w-11/12 mx-auto mt-10 ">
                     <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white">日本語</label>
-                    <textarea name="wordJP" value={receivedMessage} id="message" onChange={() => {}} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="りんご"></textarea>
+                    <textarea name="wordJP" value={receivedMessage} id="message" onChange={() => {}} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="りんご"></textarea>
                 </div>
                 <div className="w-11/12 mx-auto mt-[60%]">
                     <button name="save" className="w-full bg-cyan-300 rounded mx-auto h-16" onClick={() => setButtonClicked(true)}>保存</button>
