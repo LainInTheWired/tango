@@ -135,20 +135,26 @@ export default function Home() {
                 istwoButton={true}
                 firstButtonName="戻る"
             />
-            <form action="" onSubmit={onSubmit}>
-                <div className="w-11/12 mx-auto mt-10">
-                    <label htmlFor="message" className="block  text-sm font-medium text-gray-900 dark:text-white">英語</label>
-                    <textarea name="wordEN" id="message" value={message} onChange={handleMessageChange} className="block p-2.5 w-full text-base text-gray-900  rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="apple"></textarea>
-                </div>
-                <div className="w-11/12 mx-auto mt-10 ">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white">日本語</label>
-                    <textarea name="wordJP" value={receivedMessage} id="message" onChange={handleReceivedMessageChange} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="りんご"></textarea>
-                </div>
-                <div className="w-11/12 mx-auto mt-[20svh]">
-                    <button name="save" className="w-full bg-cyan-300 rounded mx-auto h-16" onClick={() => setButtonClicked(true)}>保存</button>
-                    <button name="another" className="w-full bg-yellow-300 rounded mx-auto h-16 mt-5" onClick={() => setButtonClicked(false)}>保存して次の単語を新規作成</button>
-                </div>
-            </form>
+            <div className="pt-16">
+                <form action="" onSubmit={onSubmit}>
+                    <div className="w-11/12 mx-auto mt-10">
+                        <label htmlFor="message" className="block  text-sm font-medium text-gray-900 dark:text-white">英語</label>
+                        <textarea name="wordEN" id="message" value={message} onChange={handleMessageChange} className="block p-2.5 w-full text-base text-gray-900  rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="apple"></textarea>
+                    </div>
+                    <div className="w-11/12 mx-auto mt-10 ">
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white">日本語</label>
+                        <textarea name="wordJP" value={receivedMessage} id="message" onChange={handleReceivedMessageChange} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="りんご"></textarea>
+                    </div>
+                    <div className="text-right w-11/12 mt-5">
+                        <button className="w-24 bg-cyan-300 rounded mx-auto h-10" onClick={ () => window.open("https://ejje.weblio.jp/content/" + message, '_blank')}>辞書を開く</button>
+                    </div>
+                    <div className="w-11/12 mx-auto mt-[15svh]">
+                        <button name="save" className="w-full bg-cyan-300 rounded mx-auto h-16" onClick={() => setButtonClicked(true)}>保存</button>
+                        <button name="another" className="w-full bg-yellow-300 rounded mx-auto h-16 mt-5" onClick={() => setButtonClicked(false)}>保存して次の単語を新規作成</button>
+                    </div>
+                </form>
+            </div>
+    
         </main>
     );
     }

@@ -62,7 +62,8 @@ export default function Home() {
         istwoButton={false}
         firstButtonName=""
       />
-       {folders.map((folder) => (
+      <div className="pt-16">
+      {folders.map((folder) => (
          // ここでreturnを使用
           <Card key={folder.id} fid={folder.id} name={folder.name}></Card>
         ))}
@@ -80,11 +81,13 @@ export default function Home() {
                   作成
                 </button>
               </div>
-        </form>
-
+          </form>
         </div>
   
       )}
+        
+      </div>
+      
     </main>
   );
 }

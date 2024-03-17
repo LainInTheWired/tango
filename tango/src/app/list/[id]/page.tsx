@@ -63,14 +63,19 @@ export default function Home() {
       {/* <WordCard rows={Cardstate} onDelete={onDelete}>
 
       </WordCard> */}
-      <div className="List">
-      {words.map((item) => (
-        <SwipeableListItem key={item.id} wid={item.id} wordJP={item.WordJP} wordEN={item.WordEN} isShow={isShow}></SwipeableListItem>
-      ))}
-    </div>
-      <Link href={"/list/"+fid+"/add"}>
-          <button className="bg-cyan-300 rounded-full w-24 h-24 fixed bottom-[5%] right-[5%] shadow hover:bg-cyan-500" >新規作成</button>
-      </Link>
+      <div className="pt-16 pb-36	">
+        <div className="List">
+        {words.map((item) => (
+          <SwipeableListItem key={item.id} wid={item.id} wordJP={item.WordJP} wordEN={item.WordEN} isShow={isShow}></SwipeableListItem>
+        ))}
+      </div>
+        <Link href={"/list/"+fid+"/add"}>
+            <button className="bg-cyan-300 rounded-full w-24 h-24 fixed bottom-[5%] right-[5%] shadow hover:bg-cyan-500" >新規作成</button>
+        </Link>
+
+
+      </div>
+   
   </main>
   );
 }
