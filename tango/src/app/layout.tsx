@@ -17,9 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-[100svh]">
+      <body className="h-[80svh]">
         <Header />
         {children}
+
       </body>
     </html>
   );

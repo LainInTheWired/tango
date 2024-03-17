@@ -9,7 +9,7 @@ type Props = {
 
 export default function Menubar({firstButtonClickFuc,firstButtonName,secondButtonClickFuc,secondButtonName,istwoButton,menuName}: Props) {
     return (
-        <div className="flex bg-white min-h-16 items-center justify-between	">
+        <div className="flex bg-white min-h-16 items-center justify-between">
             <div className="w-1/3">
                 {istwoButton &&
                 <button className="bg-cyan-300 rounded w-20 h-8 ml-4" onClick={firstButtonClickFuc} >{firstButtonName}</button>

@@ -22,13 +22,12 @@ export default function Home() {
     const searchParams = useSearchParams()
     const path =  usePathname()
     const fid = Number(path.split("/").slice(-2)[0]);
-    console.log(fid)
-
-
 
     
     const connectWebSocket = () => {
-        const url: string = "wss://www.laininthewired.site:3335";
+        // const url: string = "wss://www.laininthewired.site:3335";
+        const url: string = "ws://192.168.11.7:5001";
+
         ws.current = new WebSocket(url)
 
         ws.current.onopen = () => {
@@ -120,6 +119,9 @@ export default function Home() {
             history.back()
         }
     }
+    const handleReceivedMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setReceivedMessage(event.target.value);
+    };
 
 
 
@@ -140,9 +142,9 @@ export default function Home() {
                 </div>
                 <div className="w-11/12 mx-auto mt-10 ">
                     <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white">日本語</label>
-                    <textarea name="wordJP" value={receivedMessage} id="message" onChange={() => {}} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="りんご"></textarea>
+                    <textarea name="wordJP" value={receivedMessage} id="message" onChange={handleReceivedMessageChange} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="りんご"></textarea>
                 </div>
-                <div className="w-11/12 mx-auto mt-[60%]">
+                <div className="w-11/12 mx-auto mt-[20svh]">
                     <button name="save" className="w-full bg-cyan-300 rounded mx-auto h-16" onClick={() => setButtonClicked(true)}>保存</button>
                     <button name="another" className="w-full bg-yellow-300 rounded mx-auto h-16 mt-5" onClick={() => setButtonClicked(false)}>保存して次の単語を新規作成</button>
                 </div>

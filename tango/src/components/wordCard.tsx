@@ -104,7 +104,7 @@ function SwipeableListItem({ wordEN,wordJP,wid,isShow }:Props) {
   function onDragEnd() {
     if (draggedRef.current) {
       draggedRef.current = false;
-      const threshold = 0.5;
+      const threshold = 0.3;
       if(listElementRef.current) {
 
 
