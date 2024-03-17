@@ -179,7 +179,7 @@ function SwipeableListItem({ wordEN,wordJP,wid,isShow }:Props) {
           onTouchStart={onDragStartTouch}
         >
           <div className=" text-left w-full h-16 shadow">
-            <Link href={"/aaaa"}>
+            <Link href={"https://ejje.weblio.jp/content/" + wordEN}>
               <div className="flex bg-white rounded h-16 justify-between items-center cursor-pointer ">
                 <div className="ml-3">
                   <svg className="w-10 h-10 ms-1 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">

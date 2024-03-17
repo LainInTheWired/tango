@@ -17,10 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-[80svh]">
+      <body className="h-[svh]">
         <Header />
+        <div className="pt-16">
         {children}
-
+        </div>
       </body>
     </html>
   );
