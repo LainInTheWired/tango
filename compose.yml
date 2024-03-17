@@ -23,8 +23,8 @@ services:
       - "3333:3000"
   mysql:
     image: mysql:latest
-    ports:
-      - "3306:3306"
+    # ports:
+    #   - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: demo
@@ -35,8 +35,8 @@ services:
 
   trans:
     build: ./python
-    ports:
-      - "5001:5001"
+    # ports:
+    #   - "5001:5001"
     volumes:
       - "./trans:/usr/src/app"
     environment:

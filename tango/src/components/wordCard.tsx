@@ -130,18 +130,41 @@ function SwipeableListItem({ wordEN,wordJP,wid,isShow }:Props) {
     }
   }
 
-  const Speech = (event:React.MouseEvent<HTMLDivElement>) => {
+  // const Speech = (event:React.MouseEvent<HTMLDivElement>) => {
+  //   event.preventDefault();
+  //   event.stopPropagation();    
+  //   const msg = new SpeechSynthesisUtterance(wordEN);
+  //   console.log("start speach")
+  //   const voices = window.speechSynthesis.getVoices();
+
+  //   msg.lang = 'en-US';
+  //   msg.voice = voices[0]; // 7:Google 日本人 ja-JP ※他は英語のみ（次項参照）
+  //   speechSynthesis.speak(msg)
+  // }
+  const Speech = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
-    event.stopPropagation();    
+    event.stopPropagation();
+  
+    // 進行中の発話をキャンセル
+    window.speechSynthesis.cancel();
+  
+    // 新しい発話を作成
     const msg = new SpeechSynthesisUtterance(wordEN);
-    console.log("start speach")
+  
+    // 利用可能な音声リストから英語の音声を選択
     const voices = window.speechSynthesis.getVoices();
-
-    msg.lang = 'en-US';
-    msg.voice = voices[0]; // 7:Google 日本人 ja-JP ※他は英語のみ（次項参照）
-    speechSynthesis.speak(msg)
-
-  }
+    const englishVoices = voices.filter(voice => voice.lang === 'en-US');
+    if (englishVoices.length > 0) {
+      msg.voice = englishVoices[0]; // 英語の音声を選択
+    } else {
+      console.log("No English voice found");
+    }
+  
+    // 発話を開始
+    window.speechSynthesis.speak(msg);
+  };
+  
+ 
 
   return (
     <>
