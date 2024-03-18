@@ -25,8 +25,8 @@ export default function Home() {
 
     
     const connectWebSocket = () => {
-        // const url: string = "wss://www.laininthewired.site:3335";
-        const url: string = "ws://192.168.11.7:5001";
+        const url: string = "wss://www.laininthewired.site:3335";
+        // const url: string = "ws://192.168.11.7:5001";
 
         ws.current = new WebSocket(url)
 
@@ -146,7 +146,7 @@ export default function Home() {
                         <textarea name="wordJP" value={receivedMessage} id="message" onChange={handleReceivedMessageChange} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="りんご"></textarea>
                     </div>
                     <div className="text-right w-11/12 mt-5">
-                        <button className="w-24 bg-cyan-300 rounded mx-auto h-10" onClick={ () => window.open("https://ejje.weblio.jp/content/" + message, '_blank')}>辞書を開く</button>
+                        <button type='button' className="w-24 bg-cyan-300 rounded mx-auto h-10" onClick={ () => window.open("https://ejje.weblio.jp/content/" + message, '_blank')}>辞書を開く</button>
                     </div>
                     <div className="w-11/12 mx-auto mt-[15svh]">
                         <button name="save" className="w-full bg-cyan-300 rounded mx-auto h-16" onClick={() => setButtonClicked(true)}>保存</button>
